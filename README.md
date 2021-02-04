@@ -27,6 +27,11 @@ git clone https://github.com/gnokoheat/elk-with-filebeat-by-docker-compose
 cd elk-with-filebeat-by-docker-compose/
 ```
 
+2.1 Create .env file with password
+```
+echo "PASSWORD=<secret_password>"  > .env
+```
+
 3. Set to making your log file into 'mylog' folder and change log index template.
 - Filebeat can auto-detect to *.log file was made, updated and push it to logstash.
 - Change your log index file of "logstash.template.json".
@@ -80,3 +85,9 @@ filter {
   }
 }
 ```
+
+### Login to kibana
+
+browse to http://IP:5601/ and login with:
+- username: elastic
+- password: <secret_password>
